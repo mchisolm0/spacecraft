@@ -13,7 +13,7 @@ export default function LoginScreen() {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.heroSection}>
-        <Header title={"24"} />
+        <Header title={"Spacecraft"} />
       </View>
       <Card style={styles.loginSection}>
         <TextInput
