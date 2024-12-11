@@ -9,7 +9,15 @@ export const StarshipFeedScreen = () => {
       <FlatList
         data={data.results}
         keyExtractor={(item) => item.url}
-        renderItem={({ item }) => <StarshipItem starship={item} />}
+        renderItem={({ item }) => (
+          <StarshipItem
+            starship={item}
+            filePath={require(`../../assets/starships/${item.name
+              .toString()
+              .toLowerCase()
+              .replaceAll(" ", "")}.jpg`)}
+          />
+        )}
       />
     </View>
   );

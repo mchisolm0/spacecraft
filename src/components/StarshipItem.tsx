@@ -1,5 +1,8 @@
 import React from "react";
-import { View, Text, StyleSheet, Image } from "react-native";
+import { StyleSheet, Image, View } from "react-native";
+import { Text, Card, Button } from "react-native-paper";
+
+import { ImageSourcePropType } from "react-native";
 
 interface Starship {
   name: string;
@@ -17,27 +20,35 @@ interface Starship {
   starship_class: string;
 }
 
-const StarshipItem: React.FC<{ starship: Starship }> = ({ starship }) => {
+const StarshipItem: React.FC<{
+  starship: Starship;
+  filePath: string;
+}> = ({ starship, filePath }) => {
   return (
-    <View style={styles.itemContainer}>
-      <View style={{ flexDirection: "row" }}>
-        <View>
-          <Text style={styles.title}>{starship.name}</Text>
-          <Text>{`Model: ${starship.model}`}</Text>
-          <Text>{`Cost in Credits: ${starship.cost_in_credits}`}</Text>
-          <Text>{`Crew: ${starship.crew}`}</Text>
-          <Text>{`Hyperdrive Rating: ${starship.hyperdrive_rating}`}</Text>
+    <Card>
+      <Card.Content>
+        <Text variant="titleLarge">{starship.name}</Text>
+        <View style={styles.rowContainer}>
+          <View>
+            <Text variant="bodyMedium">{`Model: ${starship.model}`}</Text>
+            <Text variant="bodyMedium">{`Cost in Credits: ${starship.cost_in_credits}`}</Text>
+          </View>
+          <View>
+            <Text variant="bodyMedium">{`Crew: ${starship.crew}`}</Text>
+            <Text variant="bodyMedium">{`Hyperdrive Rating: ${starship.hyperdrive_rating}`}</Text>
+          </View>
         </View>
+      </Card.Content>
+      {/* TODO: Finish setting up starship images */}
+      {filePath ? (
+        <Image source={require(filePath)} style={styles.image} />
+      ) : (
         <Image
+          source={require("../../assets/starships/default.jpg")} // Fallback image
           style={styles.image}
-          source={{
-            uri: `https://picsum.photos/seed/${
-              `starwars ship` + starship.model
-            }/400/200`,
-          }}
         />
-      </View>
-    </View>
+      )}
+    </Card>
   );
 };
 
@@ -50,6 +61,13 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 20,
     fontWeight: "bold",
+  },
+  // TODO: Ask re: rowContainer style and
+  // making sure the text avoids overlapping.
+  // Should the text be multiline?
+  rowContainer: {
+    flexDirection: "row",
+    justifyContent: "space-around",
   },
   image: {
     width: 40,
