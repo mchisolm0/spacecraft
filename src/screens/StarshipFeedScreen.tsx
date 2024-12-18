@@ -21,7 +21,15 @@ export const StarshipFeedScreen = () => {
       <FlatList
         data={data.results}
         keyExtractor={(item) => item.url}
-        renderItem={({ item }) => <StarshipItem starship={item} />}
+        renderItem={({ item }) => {
+          const image = ships.get(item.name);
+          return (
+            <StarshipItem
+              starship={item}
+              imagePath={image ? image : "./assets/starships/default.jpg"}
+            />
+          );
+        }}
       />
     </View>
   );

@@ -22,7 +22,15 @@ interface Starship {
 
 const StarshipItem: React.FC<{
   starship: Starship;
-}> = ({ starship }) => {
+  imagePath: string;
+}> = ({ starship, imagePath }) => {
+  let sourceImage = null;
+  if (imagePath) {
+    sourceImage = require(imagePath);
+  } else {
+    sourceImage = require("../../assets/starships/default.jpg");
+  }
+
   return (
     <Card>
       <Card.Content>
@@ -39,20 +47,7 @@ const StarshipItem: React.FC<{
         </View>
       </Card.Content>
       {/* TODO: Finish setting up starship images */}
-      {starship ? (
-        <Image
-          source={require(`../../assets/starships/${starship.name
-            .toString()
-            .toLowerCase()
-            .replaceAll(" ", "")}.jpg`)}
-          style={styles.image}
-        />
-      ) : (
-        <Image
-          source={require("../../assets/starships/default.jpg")} // Fallback image
-          style={styles.image}
-        />
-      )}
+      <Image source={sourceImage} style={styles.image} />
     </Card>
   );
 };
