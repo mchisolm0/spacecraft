@@ -3,10 +3,10 @@ import { StatusBar, StyleSheet, Text, View, FlatList } from "react-native";
 import { default as data } from "../../api/data.json";
 import StarshipItem from "../components/StarshipItem";
 
-const map = new Map<string, string>();
+const ships = new Map<string, string>();
 
 data.results.forEach((item) => {
-  map.set(
+  ships.set(
     item.name,
     `../../assets/starships/${item.name
       .toString()
