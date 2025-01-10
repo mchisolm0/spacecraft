@@ -24,12 +24,6 @@ const StarshipItem: React.FC<{
   starship: Starship;
   imagePath: string;
 }> = ({ starship, imagePath }) => {
-  let sourceImage = null;
-  if (imagePath) {
-    sourceImage = require(imagePath);
-  } else {
-    sourceImage = require("../../assets/starships/default.jpg");
-  }
 
   return (
     <Card>
@@ -47,7 +41,7 @@ const StarshipItem: React.FC<{
         </View>
       </Card.Content>
       {/* TODO: Finish setting up starship images */}
-      <Image source={sourceImage} style={styles.image} />
+      <Image source={require(imagePath)} style={styles.image} />
     </Card>
   );
 };
