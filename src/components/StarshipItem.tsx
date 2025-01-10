@@ -22,7 +22,7 @@ interface Starship {
 
 const StarshipItem: React.FC<{
   starship: Starship;
-  imagePath: string;
+  imagePath: ImageSourcePropType;
 }> = ({ starship, imagePath }) => {
 
   return (
@@ -33,15 +33,14 @@ const StarshipItem: React.FC<{
           <View>
             <Text variant="bodyMedium">{`Model: ${starship.model}`}</Text>
             <Text variant="bodyMedium">{`Cost in Credits: ${starship.cost_in_credits}`}</Text>
-          </View>
-          <View>
             <Text variant="bodyMedium">{`Crew: ${starship.crew}`}</Text>
             <Text variant="bodyMedium">{`Hyperdrive Rating: ${starship.hyperdrive_rating}`}</Text>
           </View>
+          <View>
+            <Image source={imagePath} style={styles.image} />
+          </View>
         </View>
       </Card.Content>
-      {/* TODO: Finish setting up starship images */}
-      <Image source={require(imagePath)} style={styles.image} />
     </Card>
   );
 };
@@ -64,8 +63,9 @@ const styles = StyleSheet.create({
     justifyContent: "space-around",
   },
   image: {
-    width: 40,
-    height: 40,
+    backgroundColor: "red",
+    width: 80,
+    height: 80,
     borderRadius: 15,
     marginHorizontal: 10,
   },
