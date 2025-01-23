@@ -22,12 +22,11 @@ export const StarshipFeedScreen = () => {
         data={data.results}
         keyExtractor={(item) => item.url}
         renderItem={({ item }) => {
-          const imagePath = /* ships.get(item.name) ||*/ "../../assets/starships/default.jpg";
-          const image = require(imagePath);
+          const imagePath = ships.get(item.name) || "../../assets/starships/default.jpg";
           return (
             <StarshipItem
               starship={item}
-              imagePath={image}
+              imagePath={imagePath}
             />
           );
         }}
