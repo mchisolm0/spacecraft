@@ -1,7 +1,7 @@
 import { Alert, Image, View } from "react-native";
 import { Appbar, Text } from "react-native-paper";
 
-export const TermsScreen = () => {
+export function TermsScreen() {
   function goBack() {
     // We need to use the screen props `{navigation}` to navigate back
     // it will be introduced in the next lesson `react-navigation`

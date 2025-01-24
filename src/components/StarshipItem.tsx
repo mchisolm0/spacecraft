@@ -20,11 +20,12 @@ interface Starship {
   starship_class: string;
 }
 
-const StarshipItem: React.FC<{
+interface StarshipItemProps {
   starship: Starship;
-  imagePath: ImageSourcePropType;
-}> = ({ starship, imagePath }) => {
+  imagePath: string;
+}
 
+export function StarshipItem({ starship, imagePath }: StarshipItemProps) {
   return (
     <Card>
       <Card.Content>
@@ -43,7 +44,7 @@ const StarshipItem: React.FC<{
       </Card.Content>
     </Card>
   );
-};
+}
 
 const styles = StyleSheet.create({
   itemContainer: {
@@ -71,4 +72,3 @@ const styles = StyleSheet.create({
   },
 });
 
-export default StarshipItem;
