@@ -5,7 +5,7 @@ import { SafeAreaView, StyleSheet, View } from "react-native";
 import { Card, Text, TextInput, Button, Checkbox } from "react-native-paper";
 import Header from "../components/Header";
 
-export default function LoginScreen() {
+export function LoginScreen() {
   const [email, changeEmail] = useState("");
   const [password, changePassword] = useState("");
   const [isSecure, changeIsSecure] = useState(true);

@@ -1,7 +1,7 @@
 import { StatusBar, StyleSheet, Text, View, FlatList } from "react-native";
 
 import { default as data } from "../../api/data.json";
-import StarshipItem from "../components/StarshipItem";
+import { StarshipItem } from "@/components/StarshipItem";
 
 const ships = new Map<string, string>();
 
@@ -15,7 +15,7 @@ data.results.forEach((item) => {
   );
 });
 
-export const StarshipFeedScreen = () => {
+export function StarshipFeedScreen() {
   return (
     <View style={styles.container}>
       <FlatList
@@ -33,7 +33,7 @@ export const StarshipFeedScreen = () => {
       />
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {
