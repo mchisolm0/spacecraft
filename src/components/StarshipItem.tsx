@@ -20,18 +20,14 @@ interface Starship {
 }
 
 interface StarshipItemProps {
-  starship: Starship;
-  imagePath: string;
-}
-const StarshipItem: React.FC<{
   index: number;
   starship: Starship;
-}> = ({ index, starship }) => {
+}
+export function StarshipItem({ index, starship }: StarshipItemProps) {
   const { name: title } = starship;
 
   const imageSource = getImageSource(title);
 
-export function StarshipItem({ starship, imagePath }: StarshipItemProps) {
   return (
     <Card>
       <Card.Content>
