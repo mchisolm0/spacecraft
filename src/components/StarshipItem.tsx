@@ -1,8 +1,7 @@
 import React from "react";
 import { StyleSheet, Image, View } from "react-native";
 import { Text, Card, Button } from "react-native-paper";
-
-import { ImageSourcePropType } from "react-native";
+import { getImageSource } from "../utils/getImageSource";
 
 interface Starship {
   name: string;
@@ -21,11 +20,14 @@ interface Starship {
 }
 
 interface StarshipItemProps {
+  index: number;
   starship: Starship;
-  imagePath: string;
 }
+export function StarshipItem({ index, starship }: StarshipItemProps) {
+  const { name: title } = starship;
 
-export function StarshipItem({ starship, imagePath }: StarshipItemProps) {
+  const imageSource = getImageSource(title);
+
   return (
     <Card>
       <Card.Content>
@@ -38,7 +40,7 @@ export function StarshipItem({ starship, imagePath }: StarshipItemProps) {
             <Text variant="bodyMedium">{`Hyperdrive Rating: ${starship.hyperdrive_rating}`}</Text>
           </View>
           <View>
-            <Image source={imagePath} style={styles.image} />
+            <Image source={imageSource} style={styles.image} />
           </View>
         </View>
       </Card.Content>
