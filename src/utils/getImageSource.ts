@@ -44,6 +44,8 @@ export const getImageSource = (title: string) => {
     case "y-wing":
       source = require("../../assets/starships/y-wing.jpg");
       break;
+    default:
+      source = require("../../assets/starships/default.jpg");
   }
   return source;
 };
