@@ -6,7 +6,7 @@ import { LoginScreen } from "@/screens/LoginScreen";
 import { TermsScreen } from "@/screens/TermsScreen";
 import { StarshipFeedScreen } from "./src/screens/StarshipFeedScreen";
 
-export function App() {
+function App() {
   return (
     <PaperProvider>
       {/* <LoginScreen /> */}
@@ -16,3 +16,4 @@ export function App() {
   );
 }
 
+export default App;
