@@ -15,7 +15,7 @@ export const getImageSource = (title: string) => {
   let source;
   switch (imageName) {
     case "cr90corvette":
-      source = require("../../../assets/starships/cr90corvette.jpg");
+      source = require("../../assets/starships/cr90corvette.jpg");
       break;
     case "deathstar":
       source = require("../../assets/starships/deathstar.jpg");
