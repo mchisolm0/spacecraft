@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { SafeAreaView, StyleSheet, View } from "react-native";
 
 // You can import supported modules from npm
