@@ -5,6 +5,7 @@ import { Provider as PaperProvider } from "react-native-paper";
 import { LoginScreen } from "@/screens/LoginScreen";
 import { TermsScreen } from "@/screens/TermsScreen";
 import { StarshipFeedScreen } from "./src/screens/StarshipFeedScreen";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 function App() {
 
@@ -12,12 +13,16 @@ function App() {
     require("./ReactotronConfig");
   }
 
+  const queryClient = new QueryClient();
+
   return (
-    <PaperProvider>
-      {/* <LoginScreen /> */}
-      {/* <TermsScreen /> */}
-      <StarshipFeedScreen />
-    </PaperProvider>
+    <QueryClientProvider client={queryClient}>
+      <PaperProvider>
+        {/* <LoginScreen /> */}
+        {/* <TermsScreen /> */}
+        <StarshipFeedScreen />
+      </PaperProvider>
+    </QueryClientProvider>
   );
 }
 
