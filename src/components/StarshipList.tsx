@@ -24,7 +24,7 @@ interface Starship {
  */
 const fetchStarships = async (): Promise<Starship[]> => {
   try {
-    const response = await fetch(`https://swapi.py4e.com/api/starships`);
+    const response = await fetch("https://swapi.py4e.com/api/starships/");
     const json = await response.json();
     return json;
   } catch (error) {
