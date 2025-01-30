@@ -28,7 +28,7 @@ const fetchStarships = async (): Promise<Starship[]> => {
     const json = await response.json();
     return json;
   } catch (error) {
-    throw new Error("Something bad happened with the api...");
+    throw new Error("Something bad happened with the api: " + error);
   }
 }
 
