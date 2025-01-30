@@ -22,7 +22,7 @@ interface Starship {
  * Fetches data from the SWAPI API
  * @returns {Promis<Object>} A promise that resolves to the JSON response from SWAPI
  */
-const fetchStarships = async (): Promise<Starship[]> => {
+const fetchStarships = async () => {
   try {
     const response = await fetch("https://swapi.py4e.com/api/starships/");
     const json = await response.json();
