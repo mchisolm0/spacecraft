@@ -19,20 +19,6 @@ interface Starship {
 }
 
 /**
- * Fetches data from the SWAPI API
- * @returns {Promis<Object>} A promise that resolves to the JSON response from SWAPI
- */
-const fetchStarships = async () => {
-  try {
-    const response = await fetch("https://swapi.py4e.com/api/starships/");
-    const json = await response.json();
-    return json;
-  } catch (error) {
-    throw new Error("Something bad happened with the api: " + error);
-  }
-}
-
-/**
  * Renders a FlatList of starships using data from the SWAPI API
  */
 export function StarshipsList() {
