@@ -3,21 +3,12 @@ import { StatusBar, StyleSheet, Text, View, FlatList } from "react-native";
 
 import { default as data } from "../../api/data.json";
 import { StarshipItem } from "@/components/StarshipItem";
+import { StarshipsList } from "@/components/StarshipList";
 
 export function StarshipFeedScreen() {
   return (
     <View style={styles.container}>
-      <FlatList
-        data={data.results}
-        keyExtractor={(item) => item.url}
-        renderItem={({ item }) => {
-          return (
-            <StarshipItem
-              starship={item}
-            />
-          );
-        }}
-      />
+      <StarshipsList />
     </View>
   );
 }
