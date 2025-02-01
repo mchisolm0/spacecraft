@@ -35,11 +35,11 @@ export function StarshipsList() {
   return (
     <FlatList
       data={data}
-      keyExtractor={(item) => item.url}
+      keyExtractor={(item) => item.name}
       renderItem={({ item }) => {
         return (
           <StarshipItem
-            index={item.url}
+            index={item.name}
             starship={item}
           />
         );
