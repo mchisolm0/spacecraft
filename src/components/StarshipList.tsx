@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { FlatList, Text } from "react-native";
 import { StarshipItem } from "./StarshipItem";
+import { useStarships } from "@/hooks/useStarships";
 
 interface Starship {
   name: string;
@@ -22,7 +23,7 @@ interface Starship {
  * Renders a FlatList of starships using data from the SWAPI API
  */
 export function StarshipsList() {
-  const { isLoading, isError, data } = useQuery<Starship[], Error>(['starships'], fetchStarships);
+  const { isLoading, isError, data } = useStarships();
 
   if (isLoading) {
     return <Text>Loading</Text>;
