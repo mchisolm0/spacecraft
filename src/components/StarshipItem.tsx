@@ -20,7 +20,7 @@ interface Starship {
 }
 
 interface StarshipItemProps {
-  index: number;
+  index: string;
   starship: Starship;
 }
 export function StarshipItem({ index, starship }: StarshipItemProps) {
