@@ -23,7 +23,7 @@ interface Starship {
  * Renders a FlatList of starships using data from the SWAPI API
  */
 export function StarshipsList() {
-  const { isLoading, isError, data } = useStarships();
+  const { isLoading, isError, data, refetch } = useStarships();
 
   if (isLoading) {
     return <Text>Loading</Text>;
@@ -35,6 +35,8 @@ export function StarshipsList() {
   return (
     <FlatList
       data={data}
+      onRefresh={refetch}
+      refreshing={isLoading}
       keyExtractor={(item) => item.name}
       renderItem={({ item }) => {
         return (
