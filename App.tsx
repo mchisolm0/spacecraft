@@ -6,6 +6,7 @@ import { LoginScreen } from "@/screens/LoginScreen";
 import { TermsScreen } from "@/screens/TermsScreen";
 import { StarshipFeedScreen } from "./src/screens/StarshipFeedScreen";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { NetworkProvider } from '@/contexts/Network';
 
 function App() {
 
