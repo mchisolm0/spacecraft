@@ -6,7 +6,7 @@ import { LoginScreen } from "@/screens/LoginScreen";
 import { TermsScreen } from "@/screens/TermsScreen";
 import { StarshipFeedScreen } from "./src/screens/StarshipFeedScreen";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { NetworkProvider } from '@/contexts/Network';
+import { NetworkProvider } from '@/context/Network';
 
 function App() {
 
@@ -19,9 +19,11 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <PaperProvider>
-        {/* <LoginScreen /> */}
-        {/* <TermsScreen /> */}
-        <StarshipFeedScreen />
+        <NetworkProvider>
+          {/* <LoginScreen /> */}
+          {/* <TermsScreen /> */}
+          <StarshipFeedScreen />
+        </NetworkProvider>
       </PaperProvider>
     </QueryClientProvider>
   );

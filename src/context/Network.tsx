@@ -15,17 +15,27 @@ export const NetworkProvider = ({ children }: PropsWithChildren) => {
   const [isConnected, setIsConnected] = useState<boolean | null>(false);
 
   useEffect(() => {
+    const unsubscribe = NetInfo.addEventListener((state) => {
+      setIsConnected(state.isConnected);
+    });
+
+    NetInfo.fetch().then((state) => {
+      setIsConnected(state.isConnected);
+    });
+
     // use `NetInfo.addEventListener` to listen to network status changes
     // use `NetInfo.fetch` to get the current network status
     // store the network status in the `isConnected` state
     return () => {
-      // unsubscribe from the network status listener
+      unsubscribe();
     };
   }, [isConnected]);
 
-  return {
-    /* Add `NetworkContext.Provider` with the connection status value */
-  };
+  return (
+    <NetworkContext.Provider value={{ isConnected }}>
+      {children}
+    </NetworkContext.Provider >
+  );
 };
 
 export const useNetwork = () => useContext(NetworkContext);
