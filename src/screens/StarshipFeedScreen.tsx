@@ -1,15 +1,14 @@
 import React from "react";
 import { StatusBar, StyleSheet, Text, View, FlatList } from "react-native";
 
-import { default as data } from "../../api/data.json";
-import { StarshipItem } from "@/components/StarshipItem";
 import { StarshipsList } from "@/components/StarshipList";
-import { fetchStarships } from "./hooks/useStarships";
 import { useQuery } from "@tanstack/react-query";
+import { Offline } from "@/components/Offline";
 
 export const StarshipFeedScreen = () => {
   return (
     <View style={styles.container}>
+      <Offline />
       <StarshipsList />
     </View>
   );
