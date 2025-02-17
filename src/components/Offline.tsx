@@ -6,16 +6,14 @@ export const Offline = () => {
   // Add `useIsConnected()` hook
   const { isConnected } = useNetwork();
 
+  if (isConnected === true) return null;
+
   return (
-    <>
-      {!isConnected && (
-        <View>
-          <Text style={styles.message}>
-            Offline...
-          </Text>
-        </View>
-      )}
-    </>
+    <View>
+      <Text style={styles.message}>
+        Offline...
+      </Text>
+    </View>
   );
 };
 
