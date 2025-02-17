@@ -7,6 +7,7 @@ import { TermsScreen } from "@/screens/TermsScreen";
 import { StarshipFeedScreen } from "./src/screens/StarshipFeedScreen";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { NetworkProvider } from '@/contexts/Network';
+import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
 function App() {
 
@@ -20,9 +21,13 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <PaperProvider>
         <NetworkProvider>
-          {/* <LoginScreen /> */}
-          {/* <TermsScreen /> */}
-          <StarshipFeedScreen />
+          <SafeAreaProvider>
+            <SafeAreaView style={{ flex: 1 }}>
+              {/* <LoginScreen /> */}
+              {/* <TermsScreen /> */}
+              <StarshipFeedScreen />
+            </SafeAreaView>
+          </SafeAreaProvider>
         </NetworkProvider>
       </PaperProvider>
     </QueryClientProvider>
