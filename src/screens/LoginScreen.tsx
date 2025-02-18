@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { SafeAreaView, StyleSheet, View } from "react-native";
-
 // You can import supported modules from npm
-import { Card, Text, TextInput, Button, Checkbox } from "react-native-paper";
+import { Button, Card, Checkbox, Text, TextInput } from "react-native-paper";
+
 import Header from "../components/Header";
 
 export function LoginScreen() {
@@ -46,44 +46,44 @@ export function LoginScreen() {
 }
 
 const styles = StyleSheet.create({
+  checkbox: {
+    backgroundColor: "#CBC3E3",
+    borderRadius: 10,
+    marginHorizontal: 6,
+    marginVertical: 4,
+    width: 200,
+  },
   container: {
+    backgroundColor: "#ecf0f1",
     flex: 1,
     justifyContent: "center",
-    backgroundColor: "#ecf0f1",
     padding: 8,
+  },
+  finePrint: {
+    fontSize: 8,
+    textAlign: "center",
   },
   heroSection: {
     backgroundColor: "#CBC3E3",
-    justifyContent: "center",
     flex: 3,
-  },
-  title: {
-    margin: 24,
-    fontSize: 32,
-    fontWeight: "bold",
-    textAlign: "center",
-  },
-  loginSection: {
-    flex: 7,
+    justifyContent: "center",
   },
   input: {
     margin: 10,
   },
-  checkbox: {
-    marginVertical: 4,
-    marginHorizontal: 6,
-    width: 200,
-    backgroundColor: "#CBC3E3",
-    borderRadius: 10,
+  loginSection: {
+    flex: 7,
   },
   submitButton: {
-    padding: 10,
+    backgroundColor: "#CBC3E3",
     margin: 10,
     marginHorizontal: 50,
-    backgroundColor: "#CBC3E3",
+    padding: 10,
   },
-  finePrint: {
-    fontSize: 8,
+  title: {
+    fontSize: 32,
+    fontWeight: "bold",
+    margin: 24,
     textAlign: "center",
   },
 });

@@ -1,6 +1,7 @@
-import { useNetwork } from "@/contexts/Network";
 import { StyleSheet, Text, View } from "react-native";
 import { ActivityIndicator } from "react-native-paper";
+
+import { useNetwork } from "@/contexts/Network";
 
 export const Offline = () => {
   // Add `useIsConnected()` hook
@@ -10,9 +11,7 @@ export const Offline = () => {
 
   return (
     <View>
-      <Text style={styles.message}>
-        Offline...
-      </Text>
+      <Text style={styles.message}>Offline...</Text>
     </View>
   );
 };
@@ -34,4 +33,3 @@ const styles = StyleSheet.create({
     color: "#991B1B",
   },
 });
-

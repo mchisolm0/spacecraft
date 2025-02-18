@@ -1,5 +1,4 @@
 import type { ReactNode } from "react";
-
 import { ScrollView, StyleSheet, View } from "react-native";
 import { Text } from "react-native-paper";
 
@@ -49,4 +48,3 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
 });
-

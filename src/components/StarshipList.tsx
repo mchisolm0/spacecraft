@@ -1,6 +1,8 @@
-import { useQuery } from "@tanstack/react-query";
 import { FlatList, Text } from "react-native";
+import { useQuery } from "@tanstack/react-query";
+
 import { StarshipItem } from "./StarshipItem";
+
 import { useStarships } from "@/hooks/useStarships";
 
 interface Starship {
@@ -29,7 +31,7 @@ export function StarshipsList() {
     return <Text>Loading</Text>;
   }
   if (isError) {
-    return <Text>Something bad happened...</Text>
+    return <Text>Something bad happened...</Text>;
   }
 
   return (
@@ -47,5 +49,5 @@ export function StarshipsList() {
         );
       }}
     />
-  )
+  );
 }
