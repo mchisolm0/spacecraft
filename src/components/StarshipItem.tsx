@@ -40,7 +40,10 @@ export function StarshipItem({ index, starship }: StarshipItemProps) {
             <Text variant="bodyMedium">{`Hyperdrive Rating: ${starship.hyperdrive_rating}`}</Text>
           </View>
           <View>
-            <Image source={imageSource} style={styles.image} />
+            <Image
+              source={imageSource}
+              style={styles.image}
+            />
           </View>
         </View>
       </Card.Content>
@@ -73,4 +76,3 @@ const styles = StyleSheet.create({
     marginHorizontal: 10,
   },
 });
-

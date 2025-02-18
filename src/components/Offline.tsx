@@ -10,9 +10,7 @@ export const Offline = () => {
 
   return (
     <View>
-      <Text style={styles.message}>
-        Offline...
-      </Text>
+      <Text style={styles.message}>Offline...</Text>
     </View>
   );
 };
@@ -34,4 +32,3 @@ const styles = StyleSheet.create({
     color: "#991B1B",
   },
 });
-

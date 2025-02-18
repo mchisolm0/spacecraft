@@ -15,7 +15,10 @@ export function TermsScreen() {
         <Appbar.Content title="Terms and Conditions" />
       </Appbar.Header>
       <View style={{ padding: 32 }}>
-        <Text style={{ marginBottom: 24 }} variant="bodyMedium">
+        <Text
+          style={{ marginBottom: 24 }}
+          variant="bodyMedium"
+        >
           This Terms of Service, including all supplemental terms as amended
           from time to time, governs your use of the online game, service, or
           web site known as Star Wars: The Old Republic ("TOR" and the "TOR
@@ -29,7 +32,10 @@ export function TermsScreen() {
           website from which you may also print a copy for your records.
         </Text>
         <Text variant="titleMedium">1. Account</Text>
-        <Text style={{ marginBottom: 24 }} variant="bodyMedium">
+        <Text
+          style={{ marginBottom: 24 }}
+          variant="bodyMedium"
+        >
           A TOR Account ("Account") may be required to access and use TOR
           Services. If you have questions about Account registration, please
           contact us by visiting http://www.swtor.com/support. To create a TOR
@@ -54,7 +60,10 @@ export function TermsScreen() {
           your password reminder words.
         </Text>
         <Text variant="titleMedium">2. Service</Text>
-        <Text style={{ marginBottom: 24 }} variant="bodyMedium">
+        <Text
+          style={{ marginBottom: 24 }}
+          variant="bodyMedium"
+        >
           Some TOR Services require payment of a fee. You must have an Account
           and pay the subscription or other fees to participate in these
           activities. Information about subscription and other fees for TOR
@@ -62,7 +71,10 @@ export function TermsScreen() {
           http://www.swtor.com/support.
         </Text>
         <Text variant="titleMedium">3. Privacy</Text>
-        <Text style={{ marginBottom: 24 }} variant="bodyMedium">
+        <Text
+          style={{ marginBottom: 24 }}
+          variant="bodyMedium"
+        >
           Your privacy is important to us. Please read the TOR Privacy Policy
           carefully for information relating to TOR collection and use of
           personal information. You may access the TOR Privacy Policy by
@@ -77,7 +89,10 @@ export function TermsScreen() {
           Policy at http://www.swtor.com/legalnotices/privacypolicy.
         </Text>
         <Text variant="titleMedium">4. Content</Text>
-        <Text style={{ marginBottom: 24 }} variant="bodyMedium">
+        <Text
+          style={{ marginBottom: 24 }}
+          variant="bodyMedium"
+        >
           "Content" on TOR Services may include software, technology, text,
           artwork, music, sound, and other audio visual material, and the design
           and appearance of our websites. Content may be provided by third
@@ -104,4 +119,4 @@ export function TermsScreen() {
       </View>
     </View>
   );
-};
+}

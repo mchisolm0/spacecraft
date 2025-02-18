@@ -29,7 +29,7 @@ export function StarshipsList() {
     return <Text>Loading</Text>;
   }
   if (isError) {
-    return <Text>Something bad happened...</Text>
+    return <Text>Something bad happened...</Text>;
   }
 
   return (
@@ -47,5 +47,5 @@ export function StarshipsList() {
         );
       }}
     />
-  )
+  );
 }

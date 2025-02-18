@@ -12,7 +12,7 @@ export const StarshipFeedScreen = () => {
       <StarshipsList />
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {

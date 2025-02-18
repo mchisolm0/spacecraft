@@ -34,9 +34,8 @@ export const NetworkProvider = ({ children }: PropsWithChildren) => {
   return (
     <NetworkContext.Provider value={{ isConnected }}>
       {children}
-    </NetworkContext.Provider >
+    </NetworkContext.Provider>
   );
 };
 
 export const useNetwork = () => useContext(NetworkContext);
-
