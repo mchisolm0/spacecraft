@@ -21,6 +21,7 @@ module.exports = {
         usePrettierrc: true,
       },
     ],
+    camelcase: "off", // disable camelcase rule b/c SWAPI API
     "simple-import-sort/exports": "warn", // enforce sorting exports within module
     "simple-import-sort/imports": [
       "warn",
