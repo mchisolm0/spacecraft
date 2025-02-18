@@ -1,7 +1,6 @@
 import type { PropsWithChildren } from "react";
-
-import NetInfo from "@react-native-community/netinfo";
 import React, { createContext, useContext, useEffect, useState } from "react";
+import NetInfo from "@react-native-community/netinfo";
 
 interface NetworkContextProps {
   isConnected: boolean | null;

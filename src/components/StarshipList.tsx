@@ -1,6 +1,8 @@
-import { useQuery } from "@tanstack/react-query";
 import { FlatList, Text } from "react-native";
+import { useQuery } from "@tanstack/react-query";
+
 import { StarshipItem } from "./StarshipItem";
+
 import { useStarships } from "@/hooks/useStarships";
 
 interface Starship {

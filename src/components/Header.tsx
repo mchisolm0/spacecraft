@@ -11,15 +11,15 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: "#ecf0f1",
     flex: 1,
     justifyContent: "center",
-    backgroundColor: "#ecf0f1",
     padding: 8,
   },
   title: {
-    margin: 24,
     fontSize: 32,
     fontWeight: "bold",
+    margin: 24,
     textAlign: "center",
   },
 });

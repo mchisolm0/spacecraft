@@ -1,9 +1,9 @@
 import React from "react";
-import { StatusBar, StyleSheet, Text, View, FlatList } from "react-native";
-
-import { StarshipsList } from "@/components/StarshipList";
+import { FlatList, StatusBar, StyleSheet, Text, View } from "react-native";
 import { useQuery } from "@tanstack/react-query";
+
 import { Offline } from "@/components/Offline";
+import { StarshipsList } from "@/components/StarshipList";
 
 export const StarshipFeedScreen = () => {
   return (

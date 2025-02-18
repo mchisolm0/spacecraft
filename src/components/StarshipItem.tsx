@@ -1,6 +1,7 @@
 import React from "react";
-import { StyleSheet, Image, View } from "react-native";
-import { Text, Card, Button } from "react-native-paper";
+import { Image, StyleSheet, View } from "react-native";
+import { Button, Card, Text } from "react-native-paper";
+
 import { getImageSource } from "../utils/getImageSource";
 
 interface Starship {
@@ -53,9 +54,9 @@ export function StarshipItem({ index, starship }: StarshipItemProps) {
 
 const styles = StyleSheet.create({
   itemContainer: {
-    padding: 10,
-    borderBottomWidth: 1,
     borderBottomColor: "#ccc",
+    borderBottomWidth: 1,
+    padding: 10,
   },
   title: {
     fontSize: 20,
@@ -70,9 +71,9 @@ const styles = StyleSheet.create({
   },
   image: {
     backgroundColor: "red",
-    width: 80,
-    height: 80,
     borderRadius: 15,
+    height: 80,
     marginHorizontal: 10,
+    width: 80,
   },
 });
