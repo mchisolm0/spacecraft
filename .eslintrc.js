@@ -36,8 +36,8 @@ module.exports = {
           ["^\\.\\.(?!/?$)", "^\\.\\./?$"],
           // Other relative imports. Put same-folder imports and `.` last.
           ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"],
-        ]
-      }
+        ],
+      },
     ],
     "react-native/no-color-literals": 2, // enforce color literals are not used
     "react-native/no-unused-styles": 2, // detect unused StyleSheet rules
