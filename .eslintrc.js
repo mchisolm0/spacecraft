@@ -21,6 +21,24 @@ module.exports = {
         usePrettierrc: true,
       },
     ],
+    "simple-import-sort/exports": "warn", // enforce sorting exports within module
+    "simple-import-sort/imports": [
+      "warn",
+      {
+        groups: [
+          // Side effect imports.
+          ["^\\u0000"],
+          // Packages `react` related packages come first.
+          ["^react", "^@?\\w"],
+          // Environment variables
+          ["^(@env)(/.*|$)"],
+          // Parent imports. Put `..` last.
+          ["^\\.\\.(?!/?$)", "^\\.\\./?$"],
+          // Other relative imports. Put same-folder imports and `.` last.
+          ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"],
+        ]
+      }
+    ],
     "react-native/no-color-literals": 2, // enforce color literals are not used
     "react-native/no-unused-styles": 2, // detect unused StyleSheet rules
     "react-native/no-raw-text": 0, // detect raw text outside of Text component
