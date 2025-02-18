@@ -11,8 +11,9 @@ module.exports = {
     "plugin:react/recommended", // React rules
     "plugin:react/jsx-runtime", // support for React 17 JSX
     "plugin:prettier/recommended", // Prettier recommended rules
+    "plugin:@tanstack/query/recommended",
   ],
-  plugins: ["react"], // add React and React Native plugins
+  plugins: ["react", "react-native", "eslint-plugin-simple-import-sort"], // add React and React Native plugins
   rules: {
     "prettier/prettier": [
       // Prettier rules
