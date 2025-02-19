@@ -3,7 +3,7 @@ import { ActivityIndicator } from "react-native-paper";
 
 import { useNetwork } from "@/contexts/Network";
 
-export const Offline = () => {
+export function Offline() {
   // Add `useIsConnected()` hook
   const { isConnected } = useNetwork();
 
