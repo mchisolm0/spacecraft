@@ -4,41 +4,32 @@ import { Button, Card, Text } from "react-native-paper";
 
 import { getImageSource } from "../utils/getImageSource";
 
-interface Starship {
+interface StarshipItemProps {
   name: string;
   model: string;
-  manufacturer: string;
   cost_in_credits: string;
-  length: string;
-  max_atmosphering_speed: string;
   crew: string;
-  passengers: string;
-  cargo_capacity: string;
-  consumables: string;
   hyperdrive_rating: string;
-  MGLT: string;
-  starship_class: string;
 }
-
-interface StarshipItemProps {
-  index: string;
-  starship: Starship;
-}
-export function StarshipItem({ index, starship }: StarshipItemProps) {
-  const { name: title } = starship;
-
-  const imageSource = getImageSource(title);
+export function StarshipItem({
+  name,
+  model,
+  cost_in_credits,
+  crew,
+  hyperdrive_rating,
+}: StarshipItemProps) {
+  const imageSource = getImageSource(name);
 
   return (
     <Card>
       <Card.Content>
-        <Text variant="titleLarge">{starship.name}</Text>
+        <Text variant="titleLarge">{name}</Text>
         <View style={styles.rowContainer}>
           <View>
-            <Text variant="bodyMedium">{`Model: ${starship.model}`}</Text>
-            <Text variant="bodyMedium">{`Cost in Credits: ${starship.cost_in_credits}`}</Text>
-            <Text variant="bodyMedium">{`Crew: ${starship.crew}`}</Text>
-            <Text variant="bodyMedium">{`Hyperdrive Rating: ${starship.hyperdrive_rating}`}</Text>
+            <Text variant="bodyMedium">{`Model: ${model}`}</Text>
+            <Text variant="bodyMedium">{`Cost in Credits: ${cost_in_credits}`}</Text>
+            <Text variant="bodyMedium">{`Crew: ${crew}`}</Text>
+            <Text variant="bodyMedium">{`Hyperdrive Rating: ${hyperdrive_rating}`}</Text>
           </View>
           <View>
             <Image
