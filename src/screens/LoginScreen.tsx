@@ -3,7 +3,7 @@ import { SafeAreaView, StyleSheet, View } from "react-native";
 // You can import supported modules from npm
 import { Button, Card, Checkbox, Text, TextInput } from "react-native-paper";
 
-import Header from "../components/Header";
+import { Header } from "../components/Header";
 
 export function LoginScreen() {
   const [email, changeEmail] = useState("");
