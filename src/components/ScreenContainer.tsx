@@ -10,11 +10,11 @@ interface ScreenContainerProps {
   withSeparatorFooter?: boolean;
 }
 
-export const ScreenContainer = ({
+export function ScreenContainer({
   children,
   title,
   withSeparatorFooter = false,
-}: ScreenContainerProps) => {
+}: ScreenContainerProps) {
   return (
     <ScrollView
       nestedScrollEnabled={true}
