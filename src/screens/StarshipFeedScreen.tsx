@@ -4,13 +4,13 @@ import { useQuery } from "@tanstack/react-query";
 
 import { Offline } from "@/components/Offline";
 import { StarshipsList } from "@/components/StarshipList";
+import { ScreenContainer } from "@/components/ScreenContainer";
 
 export const StarshipFeedScreen = () => {
   return (
-    <View style={styles.container}>
-      <Offline />
+    <ScreenContainer title="Starship Screen">
       <StarshipsList />
-    </View>
+    </ScreenContainer>
   );
 };
 
