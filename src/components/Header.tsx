@@ -5,7 +5,7 @@ interface HeaderProps {
   title: string;
 }
 
-const Header: React.FC<HeaderProps> = ({ title }) => {
+export function Header({ title }: HeaderProps) {
   return <Text style={styles.title}>{title}</Text>;
 };
 
@@ -23,5 +23,3 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
 });
-
-export default Header;
