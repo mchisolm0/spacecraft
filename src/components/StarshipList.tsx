@@ -27,8 +27,11 @@ export function StarshipsList() {
       renderItem={({ item }) => {
         return (
           <StarshipItem
-            index={item.name}
-            starship={item}
+            name={item.name}
+            model={item.model}
+            cost_in_credits={item.cost_in_credits}
+            crew={item.crew}
+            hyperdrive_rating={item.hyperdrive_rating}
           />
         );
       }}
