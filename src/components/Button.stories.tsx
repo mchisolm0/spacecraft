@@ -14,6 +14,18 @@ export const Default = () => (
     >
       Text
     </Button>
+    <Button
+      mode="outlined"
+      onPress={() => Alert.alert("Pressed!")}
+    >
+      Outlined
+    </Button>
+    <Button
+      mode="contained"
+      onPress={() => Alert.alert("Pressed!")}
+    >
+      Contained
+    </Button>
   </View>
 );
 
