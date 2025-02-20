@@ -26,6 +26,4 @@ export const Default = () => (
   </View>
 );
 
-Default.story = {
-  name: "Default",
-};
+Default.storyName = "Default";

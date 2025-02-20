@@ -6,7 +6,7 @@ export default {
   title: "Button",
 };
 
-export const _Button = () => (
+export const Default = () => (
   <View style={{ padding: 16, justifyContent: "space-between", flex: 1 }}>
     <Button
       mode="text"
@@ -16,3 +16,5 @@ export const _Button = () => (
     </Button>
   </View>
 );
+
+Default.storyName = "Default";
