@@ -37,7 +37,8 @@ function App() {
 
 let AppEntryPoint = App;
 
-if (Constants.expoConfig.extra.storybookEnabled === "true") {
+if (Constants?.expoConfig?.extra?.storybookEnabled === "true") {
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
   AppEntryPoint = require("./.storybook").default;
 }
 
