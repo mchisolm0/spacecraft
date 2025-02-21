@@ -11,6 +11,7 @@ module.exports = {
           ? process.env.STORYBOOK_ENABLED
           : "false",
     },
+    newArchEnabled: true,
     userInterfaceStyle: "light",
     splash: {
       image: "./assets/splash.png",
