@@ -29,16 +29,7 @@ config.resolver.resolveRequest = (context, moduleName, platform) => {
 };
 
 module.exports = withStorybook(config, {
-  // Set to false to remove storybook specific options
-  // you can also use a env variable to set this
   enabled: storyEnabled,
   // Path to your storybook config
   configPath: path.resolve(__dirname, "./.storybook"),
-
-  // Optional websockets configuration
-  // Starts a websocket server on the specified port and host on metro start
-  // websockets: {
-  //   port: 7007,
-  //   host: 'localhost',
-  // },
 });
