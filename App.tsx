@@ -3,6 +3,7 @@ import React from "react";
 import { Provider as PaperProvider } from "react-native-paper";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import Constants from "expo-constants";
 
 import { StarshipFeedScreen } from "./src/screens/StarshipFeedScreen";
 
@@ -34,4 +35,10 @@ function App() {
   );
 }
 
-export default App;
+let AppEntryPoint = App;
+
+if (Constants?.expoConfig?.extra?.storybookEnabled === "true") {
+  AppEntryPoint = require("./.storybook").default;
+}
+
+export default AppEntryPoint;
