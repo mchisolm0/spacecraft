@@ -7,6 +7,26 @@ const withStorybook = require("@storybook/react-native/metro/withStorybook");
 const config = getDefaultConfig(__dirname);
 config.transformer.unstable_allowRequireContext = true;
 
+// Only include storybook files in the metro bundler if storybook is enabled
+config.resolver.resolveRequest = (context, moduleName, platform) => {
+  const defaultResolveResult = context.resolveRequest(
+    context,
+    moduleName,
+    platform,
+  );
+
+  if (
+    process.env.STORYBOOK_ENABLED !== "true" &&
+    defaultResolveResult?.filePath?.includes?.(".storybook/")
+  ) {
+    return {
+      type: "empty",
+    };
+  }
+
+  return defaultResolveResult;
+};
+
 module.exports = withStorybook(config, {
   // Set to false to remove storybook specific options
   // you can also use a env variable to set this
