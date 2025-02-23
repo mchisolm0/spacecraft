@@ -7,7 +7,7 @@ interface HeaderProps {
 
 export function Header({ title }: HeaderProps) {
   return <Text style={styles.title}>{title}</Text>;
-};
+}
 
 const styles = StyleSheet.create({
   container: {

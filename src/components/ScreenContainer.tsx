@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { ScrollView, StyleSheet, View } from "react-native";
 import { Text } from "react-native-paper";
+
 import { Offline } from "./Offline";
 
 interface ScreenContainerProps {
@@ -15,9 +16,7 @@ export function ScreenContainer({
   withSeparatorFooter = false,
 }: ScreenContainerProps) {
   return (
-    <View
-      style={styles.container}
-    >
+    <View style={styles.container}>
       <Offline />
       <Text
         style={styles.headerText}
@@ -30,7 +29,7 @@ export function ScreenContainer({
       {withSeparatorFooter && <View style={styles.footer} />}
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {

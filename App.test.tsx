@@ -1,4 +1,5 @@
-import { render, screen, act, waitFor } from "@testing-library/react-native";
+import { act, render, screen, waitFor } from "@testing-library/react-native";
+
 import App from "./App";
 
 // Mock the netinfo module
