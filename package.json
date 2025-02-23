@@ -10,7 +10,8 @@
     "ios": "expo run:ios",
     "web": "npx expo start --web",
     "lint": "eslint --ignore-path .gitignore --ext .js,.ts,.tsx .",
-    "test": "jest"
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "jest": {
     "preset": "jest-expo",
