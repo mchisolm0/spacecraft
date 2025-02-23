@@ -1,6 +1,6 @@
-import { ScrollView } from "react-native";
-import { Avatar, Card, Button, Text } from "react-native-paper";
 import React from "react";
+import { ScrollView } from "react-native";
+import { Avatar, Button, Card, Text } from "react-native-paper";
 
 export default {
   title: "Card",

@@ -14,7 +14,7 @@ export function Offline() {
       <Text style={styles.message}>Offline...</Text>
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {

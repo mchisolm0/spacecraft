@@ -3,8 +3,8 @@ import { FlatList, StatusBar, StyleSheet, Text, View } from "react-native";
 import { useQuery } from "@tanstack/react-query";
 
 import { Offline } from "@/components/Offline";
-import { StarshipsList } from "@/components/StarshipList";
 import { ScreenContainer } from "@/components/ScreenContainer";
+import { StarshipsList } from "@/components/StarshipList";
 
 export const StarshipFeedScreen = () => {
   return (
