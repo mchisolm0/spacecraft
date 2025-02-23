@@ -10,6 +10,8 @@
     "ios": "expo run:ios",
     "web": "npx expo start --web",
     "lint": "eslint --ignore-path .gitignore --ext .js,.ts,.tsx .",
+    "story": "STORYBOOK_ENABLED='true' npx expo start",
+    "storybook-generate": "sb-rn-get-stories",
     "test": "jest",
     "test:watch": "jest --watch"
   },
