@@ -9,3 +9,4 @@
 ## Testing TODO
 
 - Fix the leaking from the `App.test.tsx` file
+- Continue setting up react navigation [at this link](https://reactnavigation.org/docs/hello-react-navigation#creating-a-native-stack-navigator)
