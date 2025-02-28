@@ -13,7 +13,8 @@
     "story": "STORYBOOK_ENABLED='true' npx expo start",
     "storybook-generate": "sb-rn-get-stories",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "e2e": "~/code/Maestro/maestro-cli/build/install/maestro/bin/maestro test e2e/process.yaml"
   },
   "jest": {
     "preset": "jest-expo",

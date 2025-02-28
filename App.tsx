@@ -24,9 +24,9 @@ function App() {
         <NetworkProvider>
           <SafeAreaProvider>
             <SafeAreaView style={{ flex: 1 }}>
-              {/* <LoginScreen /> */}
+              <LoginScreen />
               {/* <TermsScreen /> */}
-              <StarshipFeedScreen />
+              {/* <StarshipFeedScreen /> */}
             </SafeAreaView>
           </SafeAreaProvider>
         </NetworkProvider>

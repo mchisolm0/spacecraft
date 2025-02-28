@@ -1,0 +1,11 @@
+appId: com.hchscs.spacecraft
+---
+- launchApp
+- tapOn: "Email"
+- inputText: "test@gmail.com"
+- tapOn: "Password"
+- inputText: "123456"
+- tapOn: "Login"
+# - waitFor: "Welcome"
+# - tapOn: "Buy this ship"
+# - tapOn: "Confirm"
