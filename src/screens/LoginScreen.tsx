@@ -1,11 +1,18 @@
 import React, { useState } from "react";
 import { SafeAreaView, StyleSheet, View } from "react-native";
-// You can import supported modules from npm
-import { Button, Card, Checkbox, Text, TextInput } from "react-native-paper";
+import { Card, Checkbox, Text, TextInput } from "react-native-paper";
+import {
+  createStaticNavigation,
+  useNavigation,
+} from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { Button } from "@react-navigation/elements";
 
 import { Header } from "../components/Header";
 
 export function LoginScreen() {
+  const navigation = useNavigation();
+
   const [email, changeEmail] = useState("");
   const [password, changePassword] = useState("");
   const [isSecure, changeIsSecure] = useState(true);
@@ -36,7 +43,12 @@ export function LoginScreen() {
           position="leading"
           style={styles.checkbox}
         />
-        <Button style={styles.submitButton}>Press Me</Button>
+        <Button
+          onPress={() => navigation.navigate("Starships")}
+          style={styles.submitButton}
+        >
+          Press Me
+        </Button>
         <Text style={styles.finePrint}>
           This is very important information.
         </Text>
