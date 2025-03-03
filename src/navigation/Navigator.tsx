@@ -6,6 +6,7 @@ import { Routes } from "./Routes";
 import { LoginScreen } from "@/screens/LoginScreen";
 import { StarshipFeedScreen } from "@/screens/StarshipFeedScreen";
 import { TermsScreen } from "@/screens/TermsScreen";
+import { StarshipDetailScreen } from "@/screens/StarshipDetailScreen";
 
 const RootStack = createNativeStackNavigator({
   initialRouteName: "Login",
@@ -16,6 +17,7 @@ const RootStack = createNativeStackNavigator({
     Login: LoginScreen,
     Terms: TermsScreen,
     Starships: StarshipFeedScreen,
+    Details: StarshipDetailScreen,
   },
 });
 
