@@ -9,4 +9,7 @@
 ## Testing TODO
 
 - Fix the leaking from the `App.test.tsx` file
-- Continue in workshop site with "Create a Navigator file" section
+- Fix the StarshipItem styling (looks too cluttered)
+- Pass params to the detail screen
+- Build the detail screen
+- Continue at Exercise 2 Navigating to another screens with params
