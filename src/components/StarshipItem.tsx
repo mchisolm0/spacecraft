@@ -2,6 +2,8 @@ import React from "react";
 import { Image, StyleSheet, View } from "react-native";
 import { Button, Card, Text } from "react-native-paper";
 
+import { useNavigation } from "@react-navigation/native";
+import { Routes } from "@/navigation/Routes";
 import { getImageSource } from "../utils/getImageSource";
 
 interface StarshipItemProps {
@@ -19,6 +21,7 @@ export function StarshipItem({
   hyperdrive_rating,
 }: StarshipItemProps) {
   const imageSource = getImageSource(name);
+  const navigation = useNavigation();
 
   return (
     <Card style={styles.itemContainer}>
