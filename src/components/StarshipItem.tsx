@@ -4,6 +4,7 @@ import { Button, Card, Text } from "react-native-paper";
 
 import { useNavigation } from "@react-navigation/native";
 import { Routes } from "@/navigation/Routes";
+
 import { getImageSource } from "../utils/getImageSource";
 
 interface StarshipItemProps {
@@ -24,22 +25,27 @@ export function StarshipItem({
   const navigation = useNavigation();
 
   return (
-    <Card style={styles.itemContainer}>
-      <Card.Content>
-        <View style={styles.rowContainer}>
-          <Image
-            source={imageSource}
-            style={styles.image}
-          />
-          <View>
-            <Text variant="titleLarge">{name}</Text>
-            <Text variant="bodyMedium">{`Cost in Credits: ${cost_in_credits}`}</Text>
-            <Text variant="bodyMedium">{`Hyperdrive Rating: ${hyperdrive_rating}`}</Text>
-            <Text variant="bodyMedium">{`Crew: ${crew}`}</Text>
+    <Button
+      onPress={() => navigation.navigate(Routes.DETAILS_SCREEN)}
+      style={styles.itemContainer}
+    >
+      <Card>
+        <Card.Content>
+          <View style={styles.rowContainer}>
+            <Image
+              source={imageSource}
+              style={styles.image}
+            />
+            <View>
+              <Text variant="titleLarge">{name}</Text>
+              <Text variant="bodyMedium">{`Cost in Credits: ${cost_in_credits}`}</Text>
+              <Text variant="bodyMedium">{`Hyperdrive Rating: ${hyperdrive_rating}`}</Text>
+              <Text variant="bodyMedium">{`Crew: ${crew}`}</Text>
+            </View>
           </View>
-        </View>
-      </Card.Content>
-    </Card>
+        </Card.Content>
+      </Card>
+    </Button>
   );
 }
 
