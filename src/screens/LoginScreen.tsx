@@ -55,9 +55,7 @@ export function LoginScreen() {
           onPress={() => navigation.navigate(Routes.TERMS_SCREEN)}
           style={styles.submitButton}
         >
-          <Text style={styles.finePrint}>
-            This is very important information.
-          </Text>
+          This is very important information.
         </Button>
       </Card>
     </SafeAreaView>
