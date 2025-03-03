@@ -21,21 +21,18 @@ export function StarshipItem({
   const imageSource = getImageSource(name);
 
   return (
-    <Card>
+    <Card style={styles.itemContainer}>
       <Card.Content>
-        <Text variant="titleLarge">{name}</Text>
         <View style={styles.rowContainer}>
+          <Image
+            source={imageSource}
+            style={styles.image}
+          />
           <View>
-            <Text variant="bodyMedium">{`Model: ${model}`}</Text>
+            <Text variant="titleLarge">{name}</Text>
             <Text variant="bodyMedium">{`Cost in Credits: ${cost_in_credits}`}</Text>
-            <Text variant="bodyMedium">{`Crew: ${crew}`}</Text>
             <Text variant="bodyMedium">{`Hyperdrive Rating: ${hyperdrive_rating}`}</Text>
-          </View>
-          <View>
-            <Image
-              source={imageSource}
-              style={styles.image}
-            />
+            <Text variant="bodyMedium">{`Crew: ${crew}`}</Text>
           </View>
         </View>
       </Card.Content>
@@ -47,7 +44,8 @@ const styles = StyleSheet.create({
   itemContainer: {
     borderBottomColor: "#ccc",
     borderBottomWidth: 1,
-    padding: 10,
+    padding: 5,
+    margin: 5,
   },
   title: {
     fontSize: 20,
@@ -58,7 +56,7 @@ const styles = StyleSheet.create({
   // Should the text be multiline?
   rowContainer: {
     flexDirection: "row",
-    justifyContent: "space-around",
+    alignItems: "center",
   },
   image: {
     backgroundColor: "red",
