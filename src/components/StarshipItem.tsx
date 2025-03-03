@@ -48,7 +48,6 @@ const styles = StyleSheet.create({
     borderBottomColor: "#ccc",
     borderBottomWidth: 1,
     padding: 5,
-    margin: 5,
   },
   title: {
     fontSize: 20,
