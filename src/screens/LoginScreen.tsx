@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 import { SafeAreaView, StyleSheet, View } from "react-native";
 import { Card, Checkbox, Text, TextInput } from "react-native-paper";
+import { Button } from "@react-navigation/elements";
 import {
   createStaticNavigation,
   useNavigation,
 } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { Button } from "@react-navigation/elements";
 
 import { Header } from "../components/Header";
+
+import { Routes } from "@/navigation/Routes";
 
 export function LoginScreen() {
   const navigation = useNavigation();
@@ -44,14 +46,19 @@ export function LoginScreen() {
           style={styles.checkbox}
         />
         <Button
-          onPress={() => navigation.navigate("Starships")}
+          onPress={() => navigation.navigate(Routes.STARSHIPS_SCREEN)}
           style={styles.submitButton}
         >
           Press Me
         </Button>
-        <Text style={styles.finePrint}>
-          This is very important information.
-        </Text>
+        <Button
+          onPress={() => navigation.navigate(Routes.TERMS_SCREEN)}
+          style={styles.submitButton}
+        >
+          <Text style={styles.finePrint}>
+            This is very important information.
+          </Text>
+        </Button>
       </Card>
     </SafeAreaView>
   );

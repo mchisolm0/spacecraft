@@ -1,11 +1,11 @@
 import React from "react";
 import { FlatList, StatusBar, StyleSheet, Text, View } from "react-native";
-import { useQuery } from "@tanstack/react-query";
+import { Button } from "@react-navigation/elements";
 import {
   createStaticNavigation,
   useNavigation,
 } from "@react-navigation/native";
-import { Button } from "@react-navigation/elements";
+import { useQuery } from "@tanstack/react-query";
 
 import { Offline } from "@/components/Offline";
 import { ScreenContainer } from "@/components/ScreenContainer";
