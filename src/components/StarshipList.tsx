@@ -5,6 +5,28 @@ import { StarshipItem } from "./StarshipItem";
 
 import { useStarships } from "@/hooks/useStarships";
 
+interface ShipProps {
+  cost_in_credits: string;
+  manufacturer: string;
+  model: string;
+  name: string;
+}
+
+interface RenderItemProps {
+  index: number;
+  item: ShipProps;
+}
+
+const renderItem = (props: RenderItemProps) => {
+  const ship = props.item;
+
+  return (
+    <StarshipItem
+      index={props.index}
+      ship={ship}
+    />
+  );
+};
 /**
  * Renders a FlatList of starships using data from the SWAPI API
  */
@@ -23,18 +45,8 @@ export function StarshipsList() {
       data={data}
       onRefresh={refetch}
       refreshing={isLoading}
-      keyExtractor={(item) => item.name}
-      renderItem={({ item }) => {
-        return (
-          <StarshipItem
-            name={item.name}
-            model={item.model}
-            cost_in_credits={item.cost_in_credits}
-            crew={item.crew}
-            hyperdrive_rating={item.hyperdrive_rating}
-          />
-        );
-      }}
+      keyExtractor={(ship) => ship.model}
+      renderItem={renderItem}
     />
   );
 }
