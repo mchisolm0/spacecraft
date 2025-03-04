@@ -1,74 +1,31 @@
 import * as React from "react";
-import { DataTable } from "react-native-paper";
+import { List } from "react-native-paper";
+import { useNavigation } from "@react-navigation/native";
 
-export function StarshipDetailScreen() {
-  const [page, setPage] = React.useState<number>(0);
-  const [numberOfItemsPerPageList] = React.useState([2, 3, 4]);
-  const [itemsPerPage, onItemsPerPageChange] = React.useState(
-    numberOfItemsPerPageList[0],
-  );
+import type { StarshipProps } from "../../api/types";
 
-  const [items] = React.useState([
-    {
-      key: 1,
-      name: "Cupcake",
-      calories: 356,
-      fat: 16,
-    },
-    {
-      key: 2,
-      name: "Eclair",
-      calories: 262,
-      fat: 16,
-    },
-    {
-      key: 3,
-      name: "Frozen yogurt",
-      calories: 159,
-      fat: 6,
-    },
-    {
-      key: 4,
-      name: "Gingerbread",
-      calories: 305,
-      fat: 3.7,
-    },
-  ]);
+interface StarshipDetailsScreenProps {
+  route: {
+    params: StarshipProps;
+  };
+}
 
-  const from = page * itemsPerPage;
-  const to = Math.min((page + 1) * itemsPerPage, items.length);
+export function StarshipDetailScreen({ route }: StarshipDetailsScreenProps) {
+  const navigation = useNavigation();
 
-  React.useEffect(() => {
-    setPage(0);
-  }, [itemsPerPage]);
+  const { name, model } = route.params;
 
   return (
-    <DataTable>
-      <DataTable.Header>
-        <DataTable.Title>Dessert</DataTable.Title>
-        <DataTable.Title numeric>Calories</DataTable.Title>
-        <DataTable.Title numeric>Fat</DataTable.Title>
-      </DataTable.Header>
-
-      {items.slice(from, to).map((item) => (
-        <DataTable.Row key={item.key}>
-          <DataTable.Cell>{item.name}</DataTable.Cell>
-          <DataTable.Cell numeric>{item.calories}</DataTable.Cell>
-          <DataTable.Cell numeric>{item.fat}</DataTable.Cell>
-        </DataTable.Row>
-      ))}
-
-      <DataTable.Pagination
-        page={page}
-        numberOfPages={Math.ceil(items.length / itemsPerPage)}
-        onPageChange={(page) => setPage(page)}
-        label={`${from + 1}-${to} of ${items.length}`}
-        numberOfItemsPerPageList={numberOfItemsPerPageList}
-        numberOfItemsPerPage={itemsPerPage}
-        onItemsPerPageChange={onItemsPerPageChange}
-        showFastPaginationControls
-        selectPageDropdownLabel={"Rows per page"}
+    <List.Section>
+      <List.Subheader>Some Title</List.Subheader>
+      <List.Item
+        title={name}
+        left={() => <List.Icon icon="folder" />}
       />
-    </DataTable>
+      <List.Item
+        title="Second Item"
+        left={() => <List.Icon icon="calendar" />}
+      />
+    </List.Section>
   );
 }
