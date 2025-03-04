@@ -47,7 +47,9 @@ const styles = StyleSheet.create({
   itemContainer: {
     borderBottomColor: "#ccc",
     borderBottomWidth: 1,
-    padding: 5,
+    marginBottom: 32,
+    marginHorizontal: 24,
+    width: `100%`,
   },
   title: {
     fontSize: 20,
