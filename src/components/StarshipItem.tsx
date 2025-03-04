@@ -2,31 +2,30 @@ import React from "react";
 import { Image, StyleSheet, View } from "react-native";
 import { Button, Card, Text } from "react-native-paper";
 
+import type { StarshipProps } from "../../api/types";
+
 import { useNavigation } from "@react-navigation/native";
 import { Routes } from "@/navigation/Routes";
 
 import { getImageSource } from "../utils/getImageSource";
 
 interface StarshipItemProps {
-  name: string;
-  model: string;
-  cost_in_credits: string;
-  crew: string;
-  hyperdrive_rating: string;
+  index: number;
+  ship: StarshipProps;
 }
-export function StarshipItem({
-  name,
-  model,
-  cost_in_credits,
-  crew,
-  hyperdrive_rating,
-}: StarshipItemProps) {
-  const imageSource = getImageSource(name);
+export function StarshipItem({ index, ship }: StarshipItemProps) {
+  const { cost_in_credits: price, manufacturer, name: title } = ship;
+  const imageSource = getImageSource(title);
   const navigation = useNavigation();
 
   return (
     <Button
-      onPress={() => navigation.navigate(Routes.DETAILS_SCREEN)}
+      onPress={() =>
+        navigation.navigate(Routes.DETAILS_SCREEN, {
+          ...ship,
+          image: imageSource,
+        })
+      }
       style={styles.itemContainer}
     >
       <Card>
@@ -36,12 +35,7 @@ export function StarshipItem({
               source={imageSource}
               style={styles.image}
             />
-            <View>
-              <Text variant="titleLarge">{name}</Text>
-              <Text variant="bodyMedium">{`Cost in Credits: ${cost_in_credits}`}</Text>
-              <Text variant="bodyMedium">{`Hyperdrive Rating: ${hyperdrive_rating}`}</Text>
-              <Text variant="bodyMedium">{`Crew: ${crew}`}</Text>
-            </View>
+            <Text variant="titleLarge">{title}</Text>
           </View>
         </Card.Content>
       </Card>
