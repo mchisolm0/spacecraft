@@ -47,14 +47,12 @@ export function StarshipItem({ index, ship }: StarshipItemProps) {
       style={styles.itemContainer}
     >
       <Card>
+        <Card.Cover source={imageSource} />
         <Card.Content>
-          <View style={styles.rowContainer}>
-            <Image
-              source={imageSource}
-              style={styles.image}
-            />
-            <Text variant="titleLarge">{title}</Text>
-          </View>
+          <Card.Title
+            subtitle={manufacturer}
+            title={title}
+          />
         </Card.Content>
       </Card>
     </AnimatedCard>
@@ -65,23 +63,14 @@ const styles = StyleSheet.create({
   itemContainer: {
     borderBottomColor: "#ccc",
     borderBottomWidth: 1,
-    marginBottom: 32,
-    marginHorizontal: 24,
-    width: `100%`,
+    marginBottom: 16,
+    marginHorizontal: 4,
   },
   title: {
     fontSize: 20,
     fontWeight: "bold",
   },
-  // TODO: Ask re: rowContainer style and
-  // making sure the text avoids overlapping.
-  // Should the text be multiline?
-  rowContainer: {
-    flexDirection: "row",
-    alignItems: "center",
-  },
   image: {
-    backgroundColor: "red",
     borderRadius: 15,
     height: 80,
     marginHorizontal: 10,
