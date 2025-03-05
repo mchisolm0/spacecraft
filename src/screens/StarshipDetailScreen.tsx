@@ -1,5 +1,6 @@
 import * as React from "react";
-import { List } from "react-native-paper";
+import { View, Image, StyleSheet } from "react-native";
+import { List, Text } from "react-native-paper";
 import { useNavigation } from "@react-navigation/native";
 
 import type { StarshipProps } from "../../api/types";
@@ -13,19 +14,53 @@ interface StarshipDetailsScreenProps {
 export function StarshipDetailScreen({ route }: StarshipDetailsScreenProps) {
   const navigation = useNavigation();
 
-  const { name, model } = route.params;
+  const {
+    cost_in_credits: price,
+    manufacturer,
+    passengers,
+    hyperdrive_rating: speed,
+    name,
+    model,
+    image,
+  } = route.params;
 
   return (
-    <List.Section>
-      <List.Subheader>Some Title</List.Subheader>
-      <List.Item
-        title={name}
-        left={() => <List.Icon icon="folder" />}
+    <View style={styles.container}>
+      <Image
+        source={image}
+        style={styles.imageStyle}
       />
-      <List.Item
-        title="Second Item"
-        left={() => <List.Icon icon="calendar" />}
-      />
-    </List.Section>
+      <List.Section>
+        <Text variant="displayLarge">{name}</Text>
+        <List.Subheader>{model}</List.Subheader>
+        <List.Item
+          title={price}
+          left={() => <List.Icon icon="hand-coin-outline" />}
+        />
+        <List.Item
+          title={manufacturer}
+          left={() => <List.Icon icon="hammer-wrench" />}
+        />
+        <List.Item
+          title={speed}
+          left={() => <List.Icon icon="speedometer" />}
+        />
+        <List.Item
+          title={passengers}
+          left={() => <List.Icon icon="account-group" />}
+        />
+      </List.Section>
+    </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    margin: 15,
+  },
+  imageStyle: {
+    borderRadius: 15,
+    width: `100%`,
+  },
+});
