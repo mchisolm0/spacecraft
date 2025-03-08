@@ -1,5 +1,8 @@
 import { createStaticNavigation, useRoute } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import {
+  createNativeStackNavigator,
+  NativeStackNavigationProp,
+} from "@react-navigation/native-stack";
 
 import { Routes } from "./Routes";
 
@@ -7,18 +10,42 @@ import { LoginScreen } from "@/screens/LoginScreen";
 import { StarshipFeedScreen } from "@/screens/StarshipFeedScreen";
 import { TermsScreen } from "@/screens/TermsScreen";
 import { StarshipDetailScreen } from "@/screens/StarshipDetailScreen";
+import { StarshipProps } from "api/types";
 
-const RootStack = createNativeStackNavigator({
-  initialRouteName: "Login",
-  screenOptions: {
-    headerShown: false,
-  },
-  screens: {
-    Login: LoginScreen,
-    Terms: TermsScreen,
-    Starships: StarshipFeedScreen,
-    Details: StarshipDetailScreen,
-  },
-});
+export interface RootStackParamList {
+  Login: undefined;
+  Terms: undefined;
+  Starships: undefined;
+  Details: StarshipProps;
+  [key: string]: any;
+}
 
-export const Navigator = createStaticNavigation(RootStack);
+const RootStack = createNativeStackNavigator<RootStackParamList>();
+
+export type StackNavigation = NativeStackNavigationProp<RootStackParamList>;
+
+export const Navigator = () => {
+  return (
+    <RootStack.Navigator initialRouteName="Login">
+      <RootStack.Screen
+        name="Login"
+        component={LoginScreen}
+      />
+      <RootStack.Screen
+        name="Terms"
+        component={TermsScreen}
+      />
+      <RootStack.Screen
+        name="Starships"
+        component={StarshipFeedScreen}
+      />
+      <RootStack.Screen
+        name="Details"
+        component={StarshipDetailScreen}
+        options={{
+          presentation: "modal",
+        }}
+      />
+    </RootStack.Navigator>
+  );
+};

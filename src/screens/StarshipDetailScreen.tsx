@@ -2,17 +2,18 @@ import * as React from "react";
 import { View, Image, StyleSheet } from "react-native";
 import { List, Text } from "react-native-paper";
 import { useNavigation } from "@react-navigation/native";
+import { RootStackParamList, StackNavigation } from "@/navigation/Navigator";
 
 import type { StarshipProps } from "../../api/types";
 
-interface StarshipDetailsScreenProps {
+interface StarshipDetailScreenProps {
   route: {
     params: StarshipProps;
   };
 }
 
-export function StarshipDetailScreen({ route }: StarshipDetailsScreenProps) {
-  const navigation = useNavigation();
+export function StarshipDetailScreen({ route }: StarshipDetailScreenProps) {
+  const navigation = useNavigation<StackNavigation>();
 
   const {
     cost_in_credits: price,
