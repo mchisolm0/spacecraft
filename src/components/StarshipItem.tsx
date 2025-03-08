@@ -59,6 +59,12 @@ export function StarshipItem({ index, ship }: StarshipItemProps) {
 }
 
 const styles = StyleSheet.create({
+  image: {
+    borderRadius: 15,
+    height: 80,
+    marginHorizontal: 10,
+    width: 80,
+  },
   itemContainer: {
     borderBottomColor: "#ccc",
     borderBottomWidth: 1,
@@ -68,11 +74,5 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 20,
     fontWeight: "bold",
-  },
-  image: {
-    borderRadius: 15,
-    height: 80,
-    marginHorizontal: 10,
-    width: 80,
   },
 });
