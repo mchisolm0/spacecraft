@@ -1,70 +1,78 @@
 import React from "react";
 import { Image, StyleSheet, View } from "react-native";
 import { Button, Card, Text } from "react-native-paper";
+import { FadeInDown, FadeOut } from "react-native-reanimated";
+import { useNavigation } from "@react-navigation/native";
 
+import type { StarshipProps } from "../../api/types";
 import { getImageSource } from "../utils/getImageSource";
+import { withAnimated } from "../utils/withAnimated";
+
+import { Routes } from "@/navigation/Routes";
+
+const AnimatedCard = withAnimated(Card);
 
 interface StarshipItemProps {
-  name: string;
-  model: string;
-  cost_in_credits: string;
-  crew: string;
-  hyperdrive_rating: string;
+  index: number;
+  ship: StarshipProps;
 }
-export function StarshipItem({
-  name,
-  model,
-  cost_in_credits,
-  crew,
-  hyperdrive_rating,
-}: StarshipItemProps) {
-  const imageSource = getImageSource(name);
+
+interface StarshipDetailsScreenParams {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  navigate: any;
+}
+
+export function StarshipItem({ index, ship }: StarshipItemProps) {
+  const { cost_in_credits: price, manufacturer, name: title } = ship;
+  const imageSource = getImageSource(title);
+
+  const navigation = useNavigation<StarshipDetailsScreenParams>();
+  const handleGoToDetails = () => {
+    navigation.navigate(Routes.DETAILS_SCREEN, {
+      ...ship,
+      image: imageSource,
+    });
+  };
 
   return (
-    <Card>
-      <Card.Content>
-        <Text variant="titleLarge">{name}</Text>
-        <View style={styles.rowContainer}>
-          <View>
-            <Text variant="bodyMedium">{`Model: ${model}`}</Text>
-            <Text variant="bodyMedium">{`Cost in Credits: ${cost_in_credits}`}</Text>
-            <Text variant="bodyMedium">{`Crew: ${crew}`}</Text>
-            <Text variant="bodyMedium">{`Hyperdrive Rating: ${hyperdrive_rating}`}</Text>
-          </View>
-          <View>
-            <Image
-              source={imageSource}
-              style={styles.image}
-            />
-          </View>
-        </View>
-      </Card.Content>
-    </Card>
+    <AnimatedCard
+      // mounting
+      entering={FadeInDown.duration(index > 3 ? 0 : 250).delay(
+        index > 3 ? 0 : 100 * index,
+      )}
+      //
+      exiting={FadeOut.duration(250)}
+      onPress={handleGoToDetails}
+      style={styles.itemContainer}
+    >
+      <Card>
+        <Card.Cover source={imageSource} />
+        <Card.Content>
+          <Card.Title
+            subtitle={manufacturer}
+            title={title}
+          />
+        </Card.Content>
+      </Card>
+    </AnimatedCard>
   );
 }
 
 const styles = StyleSheet.create({
-  itemContainer: {
-    borderBottomColor: "#ccc",
-    borderBottomWidth: 1,
-    padding: 10,
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: "bold",
-  },
-  // TODO: Ask re: rowContainer style and
-  // making sure the text avoids overlapping.
-  // Should the text be multiline?
-  rowContainer: {
-    flexDirection: "row",
-    justifyContent: "space-around",
-  },
   image: {
-    backgroundColor: "red",
     borderRadius: 15,
     height: 80,
     marginHorizontal: 10,
     width: 80,
+  },
+  itemContainer: {
+    borderBottomColor: "#ccc",
+    borderBottomWidth: 1,
+    marginBottom: 16,
+    marginHorizontal: 4,
+  },
+  title: {
+    fontSize: 20,
+    fontWeight: "bold",
   },
 });

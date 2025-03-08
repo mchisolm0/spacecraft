@@ -9,3 +9,7 @@
 ## Testing TODO
 
 - Fix the leaking from the `App.test.tsx` file
+- Fix the StarshipItem styling (looks too cluttered)
+- Pass params to the detail screen
+- Build the detail screen
+- Continue at Exercise 2 Navigating to another screens with params
