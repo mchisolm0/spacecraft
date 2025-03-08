@@ -34,7 +34,7 @@ export function StarshipsList() {
   const { isLoading, isError, data, refetch } = useStarships();
 
   if (isLoading) {
-    return <Text>Loading</Text>;
+    return <Text>Loading...</Text>;
   }
   if (isError) {
     return <Text>Something bad happened...</Text>;
