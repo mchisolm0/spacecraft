@@ -2,14 +2,13 @@ import React from "react";
 import { Image, StyleSheet, View } from "react-native";
 import { Button, Card, Text } from "react-native-paper";
 import { FadeInDown, FadeOut } from "react-native-reanimated";
+import { useNavigation } from "@react-navigation/native";
 
 import type { StarshipProps } from "../../api/types";
-
-import { useNavigation } from "@react-navigation/native";
-import { Routes } from "@/navigation/Routes";
-
 import { getImageSource } from "../utils/getImageSource";
 import { withAnimated } from "../utils/withAnimated";
+
+import { Routes } from "@/navigation/Routes";
 
 const AnimatedCard = withAnimated(Card);
 

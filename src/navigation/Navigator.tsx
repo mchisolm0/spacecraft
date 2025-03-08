@@ -7,9 +7,9 @@ import {
 import { Routes } from "./Routes";
 
 import { LoginScreen } from "@/screens/LoginScreen";
+import { StarshipDetailScreen } from "@/screens/StarshipDetailScreen";
 import { StarshipFeedScreen } from "@/screens/StarshipFeedScreen";
 import { TermsScreen } from "@/screens/TermsScreen";
-import { StarshipDetailScreen } from "@/screens/StarshipDetailScreen";
 import { StarshipProps } from "api/types";
 
 export interface RootStackParamList {
