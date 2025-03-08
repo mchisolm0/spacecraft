@@ -27,6 +27,13 @@ export function StarshipDetailScreen({ route }: StarshipDetailScreenProps) {
 
   return (
     <View style={styles.container}>
+      <Button
+        onPress={() => navigation.goBack()}
+        mode="contained"
+        icon="alpha-x-circle"
+      >
+        Close
+      </Button>
       <Image
         source={image}
         style={styles.imageStyle}
